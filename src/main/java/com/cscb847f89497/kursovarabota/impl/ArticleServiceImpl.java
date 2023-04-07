@@ -62,4 +62,9 @@ public class ArticleServiceImpl implements ArticleService {
         return Utils.mapList(articleRepository.findByNavbar(navbar), ArticleDTO.class);
     }
 
+    @Override
+    public List<String> findAllNavbar() {
+        return articleRepository.findDistinctNavbar();
+    }
+
 }

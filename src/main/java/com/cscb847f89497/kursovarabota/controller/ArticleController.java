@@ -32,6 +32,7 @@ public class ArticleController {
     @GetMapping("/add/article")
     private String showFromAddArticle(Model model) {
         model.addAttribute("article", new ArticleDTO());
+        model.addAttribute("navbars", articleService.findAllNavbar());
         return "article/new-article";
     }
 
@@ -58,6 +59,7 @@ public class ArticleController {
     public String edit(@PathVariable("id") String stdId, Model model) {
         Long id = Long.parseLong(stdId);
         model.addAttribute("article", articleService.findOneById(id));
+        model.addAttribute("navbars", articleService.findAllNavbar());
         return "article/edit-article";
     }
 

@@ -38,8 +38,18 @@
               <input type="text" class="form-control" th:field="*{subdomain}" />
             </div>
             <div class="mb-3 mt-3 col-sm-4">
-              <label class="form-label">Nav Bar:</label>
-              <input type="text" class="form-control" th:field="*{navbar}" />
+              <label class="form-label">Navbar:</label>
+              <select
+                th:field="*{navbar}"
+                class="form-control"
+                id="dropDownList"
+              >
+                <option
+                  th:each="navbar : ${navbars}"
+                  th:value="${navbar}"
+                  th:text="${navbar}"
+                ></option>
+              </select>
             </div>
             <div class="mb-3 mt-3 col-sm-4">
               <label class="form-label">Picture:</label>

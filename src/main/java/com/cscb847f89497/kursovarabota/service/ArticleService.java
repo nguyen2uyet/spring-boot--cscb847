@@ -15,6 +15,8 @@ public interface ArticleService {
 
     public ArticleDTO findOneById(Long id);
 
+    public List<String> findAllNavbar();
+
     public List<ArticleDTO> list();
 
     public void add(ArticleDTO ArticleDTO);
