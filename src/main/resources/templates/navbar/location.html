@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="fragments.html :: headfiles"></head>
+  <body>
+    <!-- ======= Header ======= -->
+    <header th:insert="fragments.html :: navbar"></header>
+
+    <!-- End Header -->
+
+    <div th:insert="fragments.html :: hero"></div>
+
+    <main id="main">
+      <div class="container">
+        <div class="container-fluid">
+          <div class="map-responsive">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.2037924939964!2d23.2505313153755!3d42.67822527916685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa9b2543b14005%3A0xea8e06ca71a2aede!2sNew%20Bulgarian%20University!5e0!3m2!1svi!2sbg!4v1680774431487!5m2!1svi!2sbg"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <div th:insert="fragments.html :: footer"></div>
+    <!-- End  Footer -->
+
+    <div id="preloader"></div>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <div th:insert="fragments.html :: mainjs"></div>
+  </body>
+</html>

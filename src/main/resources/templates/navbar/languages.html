@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="fragments.html :: headfiles"></head>
+  <body>
+    <!-- ======= Header ======= -->
+    <header th:insert="fragments.html :: navbar"></header>
+
+    <!-- End Header -->
+
+    <div th:insert="fragments.html :: hero"></div>
+
+    <main id="main">
+      <div class="container">
+        <div class="page-header">
+          <h1 class="page-title">Languages</h1>
+        </div>
+        <div class="page-content mb-5">
+          <p>Articles of Languages</p>
+        </div>
+        <div th:each="article:${articles}">
+          <div class="row gy-5 mb-5 loadmore">
+            <div class="col-12 col-lg-6 col-xl-12">
+              <div class="template-card d-xl-flex">
+                <picture class="flex-shrink-0">
+                  <source
+                    media="(min-width: 480px) and (max-width: 768px)"
+                    th:attr="srcset=${article.picture}"
+                  />
+                  <source
+                    media="(max-width: 479px), (min-width: 769px)"
+                    th:attr="srcset=${article.picture}"
+                  />
+                  <img
+                    th:attr="src=${article.picture}"
+                    class="img-fluid"
+                    alt="Arsha - Free Corporate Bootstrap HTML
+                  Template"
+                    width="800"
+                    height="600"
+                  />
+                </picture>
+                <div class="details">
+                  <h2>
+                    <a
+                      rel="bookmark"
+                      th:href="@{/languages/{subdomain}(subdomain=${article.subdomain})}"
+                      th:text="${article.title}"
+                    ></a>
+                  </h2>
+                  <p th:text="${article.abstractContent}"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <div th:insert="fragments.html :: footer"></div>
+    <!-- End  Footer -->
+
+    <div id="preloader"></div>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <div th:insert="fragments.html :: mainjs"></div>
+  </body>
+</html>
