@@ -3,7 +3,6 @@ package com.cscb847f89497.kursovarabota.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.cscb847f89497.kursovarabota.dto.UserDTO;
 import com.cscb847f89497.kursovarabota.exception.UserAlreadyExistException;
 import com.cscb847f89497.kursovarabota.impl.UserDetailsServiceImpl;
-import com.cscb847f89497.kursovarabota.security.MyUserDetails;
 
 @Controller
 public class RegistrationController {

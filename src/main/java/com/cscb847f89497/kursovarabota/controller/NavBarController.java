@@ -1,6 +1,5 @@
 package com.cscb847f89497.kursovarabota.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,7 +86,7 @@ public class NavBarController {
         emailDetails.setMsgBody(messageDTO.getContent());
         emailDetails.setRecipient("kyetnguyen@abv.bg");
         emailService.sendSimpleMail(emailDetails);
-        return "redirect:/about-me";
+        return "redirect:/contact";
     }
 
     @GetMapping("/location")
@@ -98,22 +97,22 @@ public class NavBarController {
     @GetMapping("/current-programs")
     String currentlyProgram(Model model) {
         model.addAttribute("articles", articleService.findByNavbar("current-programs"));
-        return "/navbar/currently-program";
+        return "/navbar/current-programs";
     }
 
-    @GetMapping("/current-program/{subdomain}")
+    @GetMapping("/current-programs/{subdomain}")
     private String currentlyProgramSubdomain(@PathVariable("subdomain") String subdomain, Model model) {
         model.addAttribute("article", articleService.findOneBySubdomain(subdomain));
         return "/navbar/blog";
     }
 
-    @GetMapping("/soon-program")
+    @GetMapping("/soon-programs")
     String soonProgram(Model model) {
         model.addAttribute("articles", articleService.findByNavbar("soon-program"));
-        return "/navbar/soon-program";
+        return "/navbar/soon-programs";
     }
 
-    @GetMapping("/soon-program/{subdomain}")
+    @GetMapping("/soon-programs/{subdomain}")
     private String soonProgramSubdomain(@PathVariable("subdomain") String subdomain, Model model) {
         model.addAttribute("article", articleService.findOneBySubdomain(subdomain));
         return "/navbar/blog";

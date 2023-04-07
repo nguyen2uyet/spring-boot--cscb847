@@ -56,10 +56,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/about-us/**",
                         "/contact/**",
                         "/location/**",
-                        "/currently-program/**",
-                        "/soon-program/**",
+                        "/current-programs/**",
+                        "/soon-programs/**",
                         "/lastyear-courses/**",
-                        "/foregin-language/**",
+                        "/foreign-language/**",
                         "/bulgarian-language/**")
                 .permitAll()
                 .antMatchers("/").hasAnyAuthority("EDITOR", "ADMIN", "STUDENT")
