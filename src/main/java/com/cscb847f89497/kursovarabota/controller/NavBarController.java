@@ -136,7 +136,7 @@ public class NavBarController {
         return "/navbar/foreign-language";
     }
 
-    @GetMapping("/foregin-language/{subdomain}")
+    @GetMapping("/foreign-language/{subdomain}")
     private String foreginLanguageSubdomain(@PathVariable("subdomain") String subdomain, Model model) {
         model.addAttribute("article", articleService.findOneBySubdomain(subdomain));
         return "/navbar/blog";

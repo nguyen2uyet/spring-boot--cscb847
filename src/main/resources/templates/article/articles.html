@@ -21,6 +21,7 @@
         <thead>
           <tr>
             <th>Id</th>
+            <th>Navbar</th>
             <th>Subdomain</th>
             <div sec:authorize="hasAnyAuthority('EDITOR','ADMIN')">
               <th>Edit</th>
@@ -31,6 +32,7 @@
         <tbody>
           <tr th:each="article:${articles}">
             <td th:text="${article.id}"></td>
+            <td th:text="${article.navbar}"></td>
             <td th:text="${article.subdomain}"></td>
             <div sec:authorize="hasAnyAuthority('EDITOR','ADMIN')">
               <td>

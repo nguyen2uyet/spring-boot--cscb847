@@ -57,12 +57,12 @@ public class EditorServiceImpl implements EditorService {
         User user = new User();
         user.setEnabled(true);
         user.setPassword("$2a$12$/2JuC//y4ViP2rsHDmY/pugPZ2CvDgZN2fxQbEgr2QTlQLukp3A5e");
-        if (editorDTO.getEmail() != null) {
+        if (editorDTO.getUsername() != null) {
+            user.setUsername(editorDTO.getUsername());
+            editorDTO.setUsername(editorDTO.getUsername());
+        } else {
             user.setUsername(editorDTO.getEmail());
             editorDTO.setUsername(editorDTO.getEmail());
-        } else {
-            user.setUsername(editorDTO.getName());
-            editorDTO.setUsername(editorDTO.getName());
         }
         Set<Role> roles = new HashSet<>();
         roles.add(roleRepository.findOneByName("EDITOR"));
